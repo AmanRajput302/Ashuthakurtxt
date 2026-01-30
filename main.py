@@ -24,7 +24,7 @@ from flask import Flask #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 from telebot.apihelper import ApiTelegramException #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 
 # ---------------- CONFIG ---------------- #𓍯𝙎𝙪𝙟𝙖𝙡⚝
-BOT_TOKEN = "8562225064:AAFU6OE4ybMQM1vYY7Mc9XeytA1wykVY80A" # <-- REPLACE with your Bot token #𓍯𝙎𝙪𝙟𝙖𝙡⚝
+BOT_TOKEN = "8308791539:AAH8S1LvRK_LY27-ylWdsixvECHiBAf-sCU" # <-- REPLACE with your Bot token #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 BASE_URL = "https://backend.multistreaming.site/api" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 USER_ID_FOR_ACTIVE = "1448640" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 BASE_HEADERS = { #𓍯𝙎𝙪𝙟𝙖𝙡⚝
@@ -402,7 +402,7 @@ def handle_start(message): #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 
     msg_lines = [ #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         "━━━━━━━━━━━━━━━━━━━━━━━━", #𓍯𝙎𝙪𝙟𝙖𝙡⚝
-        " *WELCOME TO YOUR COURSE HUB!* ", #𓍯𝙎𝙪𝙟𝙖𝙡⚝
+        " *WELCOME TO YOUR COURSE ErrorXashu HUB!* ", #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         " *Select your batch from below:* ", #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         "━━━━━━━━━━━━━━━━━━━━━━\n" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
     ] #𓍯𝙎𝙪𝙟𝙖𝙡⚝
