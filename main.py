@@ -24,7 +24,7 @@ from flask import Flask #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 from telebot.apihelper import ApiTelegramException #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 
 # ---------------- CONFIG ---------------- #𓍯𝙎𝙪𝙟𝙖𝙡⚝
-BOT_TOKEN = "8308791539:AAH8S1LvRK_LY27-ylWdsixvECHiBAf-sCU" # <-- REPLACE with your Bot token #𓍯𝙎𝙪𝙟𝙖𝙡⚝
+BOT_TOKEN = "8026473618:AAEl20BZSjVvM_85rdu1IFnAxUGg8-07-SQ" # <-- REPLACE with your Bot token #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 BASE_URL = "https://backend.multistreaming.site/api" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 USER_ID_FOR_ACTIVE = "1448640" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 BASE_HEADERS = { #𓍯𝙎𝙪𝙟𝙖𝙡⚝
@@ -392,6 +392,21 @@ def build_txt_for_course(course_id, course_title=None): #𓍯𝙎𝙪𝙟𝙖�
 @bot.message_handler(commands=["start"]) #𓍯𝙎𝙪𝙟𝙖𝙡⚝
 def handle_start(message): #𓍯𝙎𝙪𝙟𝙖𝙡⚝
     chat_id = message.chat.id #𓍯𝙎𝙪𝙟𝙖𝙡⚝
+    # 🔒 Channel Join Check
+    channel_username = "@ErrorxashuHub"  # apna channel username daal
+
+    try:
+        member = bot.get_chat_member(channel_username, chat_id)
+        if member.status not in ["member", "administrator", "creator"]:
+            bot.send_message(chat_id,
+                             "⚠️ Bot use karne ke liye pehle hamara channel join karein:\n"
+                             "https://t.me/ErrorxashuHub")
+            return
+    except:
+        bot.send_message(chat_id,
+                         "⚠️ Pehle channel join karein:\n"
+                         "https://t.me/ErrorxashuHub")
+        return
     ok, batches = get_active_batches() #𓍯𝙎𝙪𝙟𝙖𝙡⚝
     if not ok: #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         bot.send_message(chat_id, "❌ *Unable to fetch batch list. Try again later.*", parse_mode="Markdown") #𓍯𝙎𝙪𝙟𝙖𝙡⚝
@@ -447,7 +462,7 @@ def handle_course_id(message): #𓍯𝙎𝙪𝙟𝙖𝙡⚝
     tmp_path = None #𓍯𝙎𝙪𝙟𝙖𝙡⚝
     try: #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         safe_title = re.sub(r"[^\w\s-]", "", course_title).strip().replace(" ", "_") #𓍯𝙎𝙪𝙟𝙖𝙡⚝
-        tmp_file_name = f"乂 𝐌𝐑 ᭄ 𝐀𝐒𝐇𝐈𝐒𝐇 メ{safe_title}.txt" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
+        tmp_file_name = f"🕊️⃝🗽𝐀𝐬𝐡𝐮❥⟵🕊️⃝❤️{safe_title}.txt" #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         tmp_path = os.path.join(tempfile.gettempdir(), tmp_file_name) #𓍯𝙎𝙪𝙟𝙖𝙡⚝
         with open(tmp_path, "w", encoding="utf-8") as tf: #𓍯𝙎𝙪𝙟𝙖𝙡⚝
             tf.write(txt) #𓍯𝙎𝙪𝙟𝙖𝙡⚝
